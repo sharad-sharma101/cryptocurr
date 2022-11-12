@@ -3,6 +3,7 @@ import axios from 'axios'
 // import BTC from '../assets/btc-img.png'
 import { FiArrowUpRight, FiArrowDown } from 'react-icons/fi'
 import './Featured.css'
+import { Link } from 'react-router-dom'
 
 const Featured = () => {
 
@@ -13,6 +14,7 @@ const Featured = () => {
     useEffect(() => {
         axios.get(url).then((response) => {
             setData(response.data)
+            console.log(response.data);
         }).catch((error) => {
             console.log(error)
         })
@@ -21,10 +23,6 @@ const Featured = () => {
     // console.log(data)
 
     if (!data) return null
-    // data.forEach(ele => {
-    //     console.log(ele.name);
-    // });
-
     return (
         <div className='featured'>
             <div className='container'>
@@ -32,14 +30,16 @@ const Featured = () => {
                 <div className='left'>
                     <h2>Explore top Crypto's Like Bitcoin, Ethereum, and Dogecoin</h2>
                     <p>See all available assets: Cryptocurrencies and NFT's</p>
-                    <button className='btn'>See More Coins</button>
+                    {/* <button className='btn'>See More Coins</button> */}
+                    <Link className='btn'  to="/more" role="button" >See More Coins</Link>
+                   
                 </div>
 
                 {/* Right */}
 
                 <div className='right'>
-                
-                     <div className='card'>
+                   <Link className='card'  to= {`/more/${data[0].id}`}  >
+                     {/* <div className='card'> */}
                         <div className='top'>
                             <img src={data[0].image} alt='' />
                         </div>
@@ -59,11 +59,10 @@ const Featured = () => {
                                     {data[0].price_change_percentage_24h.toFixed(2)}%
                                 </span>
                             )}
-                    </div> 
+                    </Link>
 
-
-                     <div className='card'>
-                        <div className='top'>
+                    <Link className='card'  to= {`/more/${data[1].id}`}  >
+                    <div className='top'>
                             <img src={data[1].image} alt='' />
                         </div>
                         <div>
@@ -82,8 +81,9 @@ const Featured = () => {
                                     {data[1].price_change_percentage_24h.toFixed(2)}%
                                 </span>
                             )}
-                    </div>
-                    <div className='card'>
+                    </Link>
+
+                    <Link className='card'  to= {`/more/${data[2].id}`}  >
                         <div className='top'>
                             <img src={data[2].image} alt='' />
                         </div>
@@ -103,8 +103,8 @@ const Featured = () => {
                                     {data[2].price_change_percentage_24h.toFixed(2)}%
                                 </span>
                             )}
-                    </div>
-                    <div className='card'>
+                    </Link>
+                    <Link className='card'  to= {`/more/${data[3].id}`}  >
                         <div className='top'>
                             <img src={data[3].image} alt='' />
                         </div>
@@ -124,8 +124,8 @@ const Featured = () => {
                                     {data[3].price_change_percentage_24h.toFixed(2)}%
                                 </span>
                             )}
-                    </div>
-                    <div className='card'>
+                    </Link>
+                    <Link className='card'  to= {`/more/${data[4].id}`}  >
                         <div className='top'>
                             <img src={data[4].image} alt='' />
                         </div>
@@ -145,8 +145,8 @@ const Featured = () => {
                                     {data[4].price_change_percentage_24h.toFixed(2)}%
                                 </span>
                             )}
-                    </div>
-                    <div className='card'>
+                    </Link>
+                    <Link className='card'  to= {`/more/${data[5].id}`}  >
                         <div className='top'>
                             <img src={data[5].image} alt='' />
                         </div>
@@ -166,7 +166,7 @@ const Featured = () => {
                                     {data[5].price_change_percentage_24h.toFixed(2)}%
                                 </span>
                             )}
-                    </div> 
+                    </Link> 
                 </div>
             </div>
 

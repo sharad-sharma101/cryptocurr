@@ -2,7 +2,7 @@ import React  from 'react'
 import './Navbar.css';
 import { FaBars , FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
    
     const [click , setClick] = useState(false);
@@ -17,13 +17,10 @@ const Navbar = () => {
                 <a href="/">Home</a>
             </li>
             <li>
-                <a href="/">Home</a>
+                <Link to="/more"  > <p className='trending' >Trending</p> </Link>
             </li>
             <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/">Home</a>
+                <Link to="/more" > Search </Link>
             </li>
          </ul>
          <div className="btn-group">

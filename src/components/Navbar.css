@@ -6,7 +6,8 @@
     top: 0;
     background: #fff;
     left: 0;
-    z-index: 10;
+    position: fixed;
+    z-index: 100;
 }
 .header .container{
     display: flex;
@@ -33,7 +34,20 @@
     display: none;
     cursor: pointer;
 }
-
+.trending {
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+  9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  font-family: bungee, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  color: var(--color-primary);
+  color: transparent;
+  background-color: rgb(194, 0, 0);
+  background-clip: text;
+  animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+  letter-spacing: 0.2rem;
+  }
 
 @media screen and (max-width :1240px) {
     .hamburger{

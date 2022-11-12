@@ -81,6 +81,9 @@
 .red {
     color: #ff0000;
 }
+h5{
+    color: black;
+}
 
 @media screen and (max-width: 940px) {
     .featured .container {
